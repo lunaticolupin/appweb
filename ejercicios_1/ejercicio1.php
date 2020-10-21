@@ -14,8 +14,9 @@
             $porcentaje = $salario * 0.025;
 
             $aportaciones = $porcentaje * 12;
-
-            echo "<p><b>".$aportaciones."</b></p>";
+            echo "<p>Salario: $ {$salario}</p>";
+            echo "<p>Porcentaje mensual: $ {$porcentaje}</p>";
+            echo "<p>Aportación anual: <b>$".$aportaciones."</b></p>";
         }
     ?>
 </body>
