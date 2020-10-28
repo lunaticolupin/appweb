@@ -21,23 +21,33 @@ if (!$db){
     die("No se puedo conectar a la base de datos");
 }
 
-echo "Conexión realizada\n";
-echo mysqli_get_host_info($db)."<br>";
+function read($db){
+    $sql = "select * from noticias";
+    $consulta = mysqli_query($db, $sql);
+    $resultados = array();
 
-$sql = "insert into noticias set titulo = 'ejemplo1', texto = 'ejemplo1', categoria = 'inicio1', fecha = CURRENT_TIMESTAMP()";
-echo $resultados = mysqli_query($db, $sql);
+    echo "Numero de registro: " . mysqli_num_rows($consulta)."<br>";
 
-$sql = "select * from noticias";
-$resultados = mysqli_query($db, $sql);
+    while ($temp = mysqli_fetch_array($consulta)){
+        $resultados[]=$temp;
+    }
 
-echo "Numero de registro: " . mysqli_num_rows($resultados)."<br>";
-
-while ($temp = mysqli_fetch_array($resultados)){
-    //print_r($temp);
-    echo "<b>ID:</b> ".$temp['id']."<br>";
-    echo "Titulo: ".$temp['titulo']."<br>";
-    echo "Texto: ".$temp['texto']."<br>";
-    echo "Categoria: ".$temp['categoria']."<br>";
-    echo "Fecha: ".$temp['fecha']."<br>";
+    return $resultados;
 }
+
+function create($db){
+    $sql = "insert into noticias set titulo = 'ejemplo1', texto = 'ejemplo1', categoria = 'inicio1', fecha = CURRENT_TIMESTAMP()";
+    $resultados = mysqli_query($db, $sql);
+
+    return $resultados;
+}
+
+function update(){
+
+}
+
+function delete(){
+
+}
+
 ?>
