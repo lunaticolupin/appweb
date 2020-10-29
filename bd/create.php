@@ -15,10 +15,11 @@ if(isset($_POST['enviar'])){
 
     if(create($db, $sql)){
         echo "<h2>Registro creado</h2>";
-        exit();
+        //exit();
+    }else{
+        echo "<h2>El registro no se creo<h2>";
     }
-
-    echo "<h2>El registro no se creo<h2>";
+    
 }
 
 ?>
@@ -30,3 +31,4 @@ if(isset($_POST['enviar'])){
     <p><input type="date" name="fecha" required></p>
     <p><input type="submit" name="enviar" value="Crear"></p>
 </form>
+<a href="index.php">Atras</a>
