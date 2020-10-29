@@ -32,6 +32,8 @@ function read($db){
         $resultados[]=$temp;
     }
 
+    mysqli_close($db);
+
     return $resultados;
 }
 
