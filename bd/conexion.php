@@ -37,8 +37,8 @@ function read($db){
     return $resultados;
 }
 
-function create($db){
-    $sql = "insert into noticias set titulo = 'ejemplo1', texto = 'ejemplo1', categoria = 'inicio1', fecha = CURRENT_TIMESTAMP()";
+function create($db, $sql){
+    //$sql = "insert into noticias set titulo = 'ejemplo1', texto = 'ejemplo1', categoria = 'inicio1', fecha = CURRENT_TIMESTAMP()";
     $resultados = mysqli_query($db, $sql);
 
     return $resultados;
