@@ -21,8 +21,13 @@ if (!$db){
     die("No se puedo conectar a la base de datos");
 }
 
-function read($db){
+function read($db, $sql_temp = null){
     $sql = "select * from noticias";
+
+    if (isset($sql_temp)){
+        $sql = $sql_temp;
+    }
+
     $consulta = mysqli_query($db, $sql);
     $resultados = array();
 
