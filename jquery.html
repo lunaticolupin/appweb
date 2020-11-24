@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8" />
+    <head>
+        <title>Ejemplo de jQuery</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    </head>
+    <body>
+        <button>Click</button>
+        <button>Click 2</button>
+        <button>Click 3</button>
+        <p id="test">Test</p>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("#test").hide();
+                });
+            });
+        </script>
+    </body>
+</html>
